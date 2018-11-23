@@ -1,0 +1,11 @@
+User-agent: Yandexbot
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: *
+Disallow: /
+
+Host: www.dom4u.com.ua
+Sitemap: http://dom4u.com.ua/sitemap_index.xml

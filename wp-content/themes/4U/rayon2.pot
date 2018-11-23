@@ -1,0 +1,274 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Rayon2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-27 17:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: single-category-action.php:8
+msgid "Акции"
+msgstr ""
+
+#: single-category-action.php:9
+msgid "Предыдущая акция"
+msgstr ""
+
+#: single-category-action.php:33 page-10.php:42 single-category-layouts.php:190
+#: page-159.php:69
+msgid "Остались вопросы?"
+msgstr ""
+
+#: single-category-action.php:34 page-10.php:43 single-category-layouts.php:191
+#: page-159.php:70
+msgid "Задайте их нашему менеджеру."
+msgstr ""
+
+#: single-category-action.php:46
+msgid "Следующая акция"
+msgstr ""
+
+#: category-5.php:4
+msgid "Галерея"
+msgstr ""
+
+#: page-10.php:7
+msgid "График работы отдела продаж:"
+msgstr ""
+
+#: page-10.php:18 front-page.php:10 header.php:75
+msgid "Заказать звонок"
+msgstr ""
+
+#: page-10.php:24
+msgid "Звоните"
+msgstr ""
+
+#: page-10.php:35
+msgid "или пишите"
+msgstr ""
+
+#: category-smi.php:6 category-news.php:6 category-diary.php:6 singlenews.php:8
+msgid "Новости"
+msgstr ""
+
+#: category-smi.php:7 category-news.php:7 category-diary.php:7
+msgid "Ход строительства"
+msgstr ""
+
+#: category-smi.php:8 category-news.php:8 category-diary.php:8
+msgid "СМИ о нас"
+msgstr ""
+
+#: category-smi.php:19 category-news.php:19 category-action.php:18
+#: category-diary.php:19
+msgid "Читать"
+msgstr ""
+
+#: category-layouts.php:19 category-two-room.php:19 category-three-room.php:22
+#: category-one-room.php:22
+msgid "Площадь, м"
+msgstr ""
+
+#: category-layouts.php:21 category-two-room.php:21 category-three-room.php:24
+#: category-one-room.php:24
+msgid "от"
+msgstr ""
+
+#: category-layouts.php:22 category-two-room.php:22 category-three-room.php:25
+#: category-one-room.php:25
+msgid "до"
+msgstr ""
+
+#: category-layouts.php:28 category-two-room.php:28 category-three-room.php:31
+#: category-one-room.php:31
+msgid "Применить"
+msgstr ""
+
+#: category-layouts.php:67 category-two-room.php:64 category-three-room.php:66
+#: category-one-room.php:67
+msgid "Общая: "
+msgstr ""
+
+#: category-layouts.php:67 category-two-room.php:64 category-two-room.php:64
+#: category-three-room.php:66 category-three-room.php:66
+#: category-one-room.php:67 category-one-room.php:67
+#: single-category-layouts.php:71 single-category-layouts.php:75
+msgid "м"
+msgstr ""
+
+#: category-layouts.php:67 category-two-room.php:64 category-three-room.php:66
+#: category-one-room.php:67
+msgid "Жилая: "
+msgstr ""
+
+#: category-layouts.php:68 category-two-room.php:65 category-three-room.php:67
+#: category-one-room.php:68 single-category-layouts.php:25
+msgid " секция"
+msgstr ""
+
+#: category-layouts.php:71 category-two-room.php:68 category-three-room.php:70
+#: category-one-room.php:71
+msgid "Подробнее"
+msgstr ""
+
+#: category-layouts.php:77 category-two-room.php:73 category-three-room.php:75
+#: category-one-room.php:76
+msgid "Извините, таких планировок нет"
+msgstr ""
+
+#: single-category-layouts.php:10
+msgid "Планировки"
+msgstr ""
+
+#: single-category-layouts.php:18
+msgid "Предыдущая квартира"
+msgstr ""
+
+#: single-category-layouts.php:19
+msgid "Следующая квартира"
+msgstr ""
+
+#: single-category-layouts.php:25
+msgid " этаж"
+msgstr ""
+
+#: single-category-layouts.php:49
+msgid "2D"
+msgstr ""
+
+#: single-category-layouts.php:50
+msgid "3D"
+msgstr ""
+
+#: single-category-layouts.php:56
+msgid "2D Схема планировки"
+msgstr ""
+
+#: single-category-layouts.php:62
+msgid "3D Схема планировки"
+msgstr ""
+
+#: single-category-layouts.php:73
+msgid "Жилая площадь"
+msgstr ""
+
+#: single-category-layouts.php:78
+msgid "Общая квадратура"
+msgstr ""
+
+#: single-category-layouts.php:87
+msgid "Прихожая"
+msgstr ""
+
+#: single-category-layouts.php:93
+msgid "Гардеробная"
+msgstr ""
+
+#: single-category-layouts.php:99 single-category-layouts.php:105
+msgid "Ванная комната"
+msgstr ""
+
+#: single-category-layouts.php:111
+msgid "Санузел"
+msgstr ""
+
+#: single-category-layouts.php:117
+msgid "Кухня"
+msgstr ""
+
+#: single-category-layouts.php:123
+msgid "Кладовая"
+msgstr ""
+
+#: single-category-layouts.php:129
+msgid "Холл"
+msgstr ""
+
+#: single-category-layouts.php:135 single-category-layouts.php:141
+msgid "Жилая комната"
+msgstr ""
+
+#: single-category-layouts.php:147
+msgid "Гостинная"
+msgstr ""
+
+#: single-category-layouts.php:153
+msgid "Кухня-гостинная"
+msgstr ""
+
+#: single-category-layouts.php:159
+msgid "Балкон"
+msgstr ""
+
+#: single-category-layouts.php:165
+msgid "Терраса"
+msgstr ""
+
+#: single-category-layouts.php:171
+msgid "Лоджия"
+msgstr ""
+
+#: single-category-layouts.php:177
+msgid "Записатся на просмотр"
+msgstr ""
+
+#: single-category-layouts.php:178
+msgid "Узнать цену"
+msgstr ""
+
+#: front-page.php:20
+msgid "предложений"
+msgstr ""
+
+#: front-page.php:26
+msgid "Акция"
+msgstr ""
+
+#: singlenews.php:9
+msgid "Предыдущая новость"
+msgstr ""
+
+#: singlenews.php:30
+msgid "Следующая новость"
+msgstr ""
+
+#: page-825.php:19
+msgid "Все"
+msgstr ""
+
+#: page-825.php:20
+msgid "Магазины"
+msgstr ""
+
+#: page-825.php:21
+msgid "Остановки"
+msgstr ""
+
+#: page-825.php:22
+msgid "Парки"
+msgstr ""
+
+#: page-825.php:23
+msgid "Школы"
+msgstr ""
+
+#: page-825.php:24
+msgid "Детские садики"
+msgstr ""
+
+#. Name of the theme
+msgid "Rayon2"
+msgstr ""
+
+#. Author of the theme
+msgid "the Tryhukigor"
+msgstr ""

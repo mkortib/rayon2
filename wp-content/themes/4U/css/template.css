@@ -1,0 +1,17 @@
+
+.filedwnld i:hover {
+    color: #6aa3ff;
+}
+
+.filedwnld
+{
+    color:#000;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    float: none !important;
+}
+.filedwnld i {
+    font-size: 60px;
+    color: #003180;
+}

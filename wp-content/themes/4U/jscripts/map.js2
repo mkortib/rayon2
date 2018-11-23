@@ -1,0 +1,559 @@
+$(window).ready(function () {
+    initMap();
+
+});
+$(window).resize(function () {
+    initMap();
+});
+
+var markers = [];
+
+function initMap() {
+    gmarkers = [];
+    markNums = [];
+    var bodyWidth = $(document).width();
+    if (bodyWidth < 768) {
+        var uluru = {lat: 50.52828758420448, lng: 30.59384716931148};
+        var zoom = 14;
+
+    } else if (bodyWidth < 480) {
+         var uluru = {lat: 50.528287, lng: 30.593847}; //55.850120, 37.643622
+         var zoom = 14;
+    } else {
+        var uluru = {lat: 50.52828758420448, lng: 30.59384716931148}; //55.850120, 37.643622
+        var zoom = 15;
+
+    }
+
+    map = new google.maps.Map(document.getElementById('location_map'), {
+        zoom: zoom,
+        center: uluru,
+        scrollwheel: false,
+        disableDefaultUI: false
+    });
+    var icons = {
+        kino: {
+            icon: '/wp-content/themes/4U/pic/design/Kino.png'
+        },
+        shop: {
+            icon: '/wp-content/themes/4U/pic/design/store-map-icon.png'
+        },
+        child: {
+            icon: '/wp-content/themes/4U/pic/design/Detsad.png'
+        },
+        school: {
+            icon: '/wp-content/themes/4U/pic/design/school-map-icon.png'
+        },
+        metro: {
+            icon: '/wp-content/themes/4U/pic/design/contacts-metro-icon.svg'
+        },
+        pool: {
+            icon: '/wp-content/themes/4U/pic/design/pool.png'
+        },
+        garden: {
+            icon: '/wp-content/themes/4U/pic/design/walk-map-icon.png'
+        },
+        theater: {
+            icon: '/wp-content/themes/4U/pic/design/Teatr.png'
+        },
+        hospital: {
+            icon: '/wp-content/themes/4U/pic/design/medicine-map-icon.png'
+        },
+        bank: {
+            icon: '/wp-content/themes/4U/pic/design/finance-map-icon.png'
+        },
+        nord: {
+            icon: '/wp-content/themes/4U/pic/design/nord-pin-01.png'
+        },
+        bus: {
+            icon: '/wp-content/themes/4U/pic/design/transport-map-icon.png'
+        },
+        gas: {
+            icon: '/wp-content/themes/4U/pic/design/map-gas-icon.png'
+        },
+        gov: {
+            icon: '/wp-content/themes/4U/pic/design/government-map-icon.png'
+        },
+        rest: {
+            icon: '/wp-content/themes/4U/pic/design/Dosug.png'
+        },
+        sport: {
+            icon: '/wp-content/themes/4U/pic/design/sport-map-icon.png'
+        },
+        ocean: {
+            icon: '/wp-content/themes/4U/pic/design/Okeanarium.png'
+        }
+
+    };
+
+    var features = [
+        //0
+        {
+            position: new google.maps.LatLng(50.464892, 30.355024),
+            type: 'gov',
+            descr: "Станция метро «Академгородок»",
+        },
+        //1
+        {
+            position: new google.maps.LatLng(55.924968, 37.542442),
+            type: 'child',
+            descr: "Детский сад №2702",
+        },
+        //2
+        {
+            position: new google.maps.LatLng(55.927997, 37.543729),
+            type: 'child',
+            descr: "Детский сад № 2703",
+        },
+        //3
+        {
+            position: new google.maps.LatLng(55.922304, 37.541587),
+            type: 'school',
+            descr: "Школа № 2044",
+        },
+        //4
+        {
+            position: new google.maps.LatLng(55.853664, 37.659346),
+            type: 'school',
+            descr: "Школа №1098",
+        },
+        //5
+        {
+            position: new google.maps.LatLng(55.927007, 37.542596),
+            type: 'school',
+            descr: "Средняя школа №2044",
+        },
+        //6
+        {
+            position: new google.maps.LatLng(55.928129, 37.545115),
+            type: 'child',
+            descr: "Детский сад № 2703",
+        },
+        //7
+        {
+            position: new google.maps.LatLng(55.933309, 37.516508),
+            type: 'shop',
+            descr: "Пятёрочка",
+        },
+        //8
+        {
+            position: new google.maps.LatLng(55.934227, 37.519785),
+            type: 'shop',
+            descr: "Мираторг",
+        },
+        //9
+        {
+            position: new google.maps.LatLng(55.935791, 37.519239),
+            type: 'shop',
+            descr: "Перекресток-Экспресс",
+        },
+        //10
+        {
+            position: new google.maps.LatLng(55.914572, 37.551527),
+            type: 'shop',
+            descr: "Дикси",
+        },
+        //11
+        {
+            position: new google.maps.LatLng(55.908636, 37.532678),
+            type: 'garden',
+            descr: "Долгопрудненский лесопарк",
+        },
+        //12
+        {
+            position: new google.maps.LatLng(55.924214, 37.541536),
+            type: 'hospital',
+            descr: "ГБУЗ «ДЦ № 5 ДЗМ», Филиал № 6",
+        },
+        //13
+        {
+            position: new google.maps.LatLng(55.925573, 37.544359),
+            type: 'hospital',
+            descr: "Клиника Медок",
+        },
+        //14
+        {
+            position: new google.maps.LatLng(55.914270, 37.541612),
+            type: 'hospital',
+            descr: "Детская городская поликлиника №125",
+        },
+        //15
+        {
+            position: new google.maps.LatLng(55.924587, 37.540797),
+            type: 'hospital',
+            descr: "Поликлиника",
+        },
+        //16
+        {
+            position: new google.maps.LatLng(55.916433, 37.540711),
+            type: 'bank',
+            descr: "ВТБ Банк Москвы",
+        },
+        //17
+        {
+            position: new google.maps.LatLng(55.921230, 37.542992),
+            type: 'bank',
+            descr: "Western Union",
+        },
+        //18
+        {
+            position: new google.maps.LatLng(55.911358, 37.540561),
+            type: 'bank',
+            descr: "ХОУМ КРЕДИТ БАНК",
+        },
+        //19
+        {
+            position: new google.maps.LatLng(55.900315, 37.541887),
+            type: 'sport',
+            descr: "Kam Gym",
+        },
+        //20
+        {
+            position: new google.maps.LatLng(55.901902, 37.566431),
+            type: 'sport',
+            descr: "X-Fit",
+        },
+        //21
+        {
+            position: new google.maps.LatLng(55.933203, 37.513250),
+            type: 'sport',
+            descr: "SkyGym фитнес-клуб",
+        },
+        //22
+        {
+            position: new google.maps.LatLng(55.909268, 37.539862), //55.847254, 37.650469
+            type: 'ocean',
+            descr: "Океанариум",
+        },
+        //23
+        {
+            position: new google.maps.LatLng(55.939697, 37.512903), //55.846652, 37.643697
+            type: 'rest',
+            descr: "МБУ КМЦ Студия Батик",
+        },
+        //24
+        {
+            position: new google.maps.LatLng(55.945037, 37.506348),
+            type: 'rest',
+            descr: "Молодежный клуб Планета Молодежи",
+        },
+        //25
+        {
+            position: new google.maps.LatLng(55.921461, 37.541976),
+            type: 'gov',
+            descr: "Пенсионный фонд РФ №6",
+        },
+        //26
+        {
+            position: new google.maps.LatLng(55.913298, 37.547499),
+            type: 'gov',
+            descr: "Центр госуслуг района Северный",
+        },
+        //27
+        {
+            position: new google.maps.LatLng(55.929486, 37.518549),
+            type: 'gov',
+            descr: "МФТИ",
+        },
+        //28
+        {
+            position: new google.maps.LatLng(55.92062358420448,37.54077016931148),
+            type: 'nord',
+            descr: "Nord",
+        },
+        //29
+        {
+            position: new google.maps.LatLng(55.897850, 37.587008),
+            type: 'metro',
+            descr: "Метро Алтуфьево",
+        },
+        //30
+        {
+            position: new google.maps.LatLng(55.924451, 37.527876),
+            type: 'bus',
+            descr: "платформа Новодачная",
+        },
+        //31
+        {
+            position: new google.maps.LatLng(55.920254, 37.544995),
+            type: 'bus',
+            descr: "21-й Километр",
+        },
+        //32
+        {
+            position: new google.maps.LatLng(55.921724, 37.540339),
+            type: 'bus',
+            descr: "9 МКР. Северный",
+        },
+       //33
+        {
+            position: new google.maps.LatLng(55.92062358420448,37.54077016931148),
+            type: 'nord',
+            descr: "Nord",
+        },
+       //34
+        {
+            position: new google.maps.LatLng(55.921682, 37.512928),
+            type: 'sport',
+            descr: "Фитнес-центр Грифон",
+        },
+       //35
+        {
+            position: new google.maps.LatLng(55.933844, 37.514234),
+            type: 'sport',
+            descr: "Скоро буду. Фитнес-клуб",
+        },
+       //36
+        {
+            position: new google.maps.LatLng(55.934952, 37.503999),
+            type: 'sport',
+            descr: "ДолФитнес-Студия. РФ",
+        },
+       //37
+        {
+            position: new google.maps.LatLng(55.934795, 37.511466),
+            type: 'sport',
+            descr: "Kangoo Jumps от Юлии. Фитнес-клуб",
+        },
+       //38
+        {
+            position: new google.maps.LatLng(55.932470, 37.500629),
+            type: 'rest',
+            descr: "Детский клуб Умка",
+        },
+       //39
+        {
+            position: new google.maps.LatLng(55.923122, 37.540927),
+            type: 'rest',
+            descr: "ГБУ Спортивно-досуговый центр Норд",
+        },
+       //40
+        {
+            position: new google.maps.LatLng(55.925748, 37.544296),
+            type: 'rest',
+            descr: "Детский центр развития RadugaDeti",
+        },
+       //41
+        {
+            position: new google.maps.LatLng(55.846638, 37.573931),
+            type: 'bus',
+            descr: "МЦК «Окружная»",
+        },
+
+    ];
+
+    // Create markers.
+    features.forEach(function (feature) {
+        var type = feature.type;
+
+        if (type == 'nord') {
+            var marker = new MarkerWithLabel({
+                position: feature.position,
+                icon: icons[feature.type].icon,
+                title: feature.descr,
+                map: map,
+                labelClass: "labels",
+                //labelContent:'<div>'+feature.descr+'</div>',
+                labelAnchor: new google.maps.Point(-90, 65)
+            });
+
+            return;
+        }
+
+        var marker = new MarkerWithLabel({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            title: feature.descr,
+            map: map,
+            labelClass: "labels",
+            labelContent:'<div>'+feature.descr+'</div>',
+            labelAnchor: new google.maps.Point(-90, 65)
+           /* labelAnchor: new google.maps.Point(-30, 65)*/
+        });
+
+        gmarkers.push(marker);
+    });
+    
+    var styledMapType = new google.maps.StyledMapType(
+        [
+            {
+                "featureType": "administrative.land_parcel",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative.locality",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative.neighborhood",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "labels.text",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            }
+        ]
+    ,{name: 'Styled Map'});
+    map.mapTypes.set('styled_map', styledMapType);
+    map.setMapTypeId('styled_map');
+
+     if(gmarkers !=undefined)    getMarkers(gmarkers,markNums=[29,30,31,41]);
+}
+
+function locMarkers() {
+
+    for (i = 0; i < gmarkers.length; i++) {
+        if (gmarkers[i].getMap() != null) gmarkers[i].setMap(null);
+    }
+
+    gmarkers[22].setMap(map);
+    gmarkers[23].setMap(map);
+    gmarkers[24].setMap(map);
+    gmarkers[25].setMap(map);
+    gmarkers[14].setMap(map);
+    gmarkers[15].setMap(map);
+
+}
+//function infraMarkers() {
+//
+//    for (i = 0; i < gmarkers.length; i++) {
+//        gmarkers[i].setMap(map);
+//    }
+//
+//}
+
+//$('.location__toggle').click(function () {
+//$('.location__toggle').removeClass('location__toggle--active');
+//    if ($(this).attr('data-location')=='location') {
+//
+//        //for (i = 0; i < gmarkers.length; i++) {
+//        //    if (gmarkers[i].getMap() != null) gmarkers[i].setMap(null);
+//        //}
+//        $(this).addClass('location__toggle--active');
+//        getMarkers(gmarkers,markNums=[ 29,30,31, 33]);
+//
+//    } else {
+//            $(this).addClass('location__toggle--active');
+//        for (i = 0; i < gmarkers.length; i++) {
+//            gmarkers[i].setMap(map);
+//        }
+//
+//    }
+//
+//});
+
+function getMarkers(gmarkers,markNums)
+{
+
+    //for (i = 0; i < gmarkers.length; i++) {
+    //    if (gmarkers[i].getMap() != null) gmarkers[i].setMap(null);
+    //}
+
+      for(i=0; i<gmarkers.length; i++){
+            gmarkers[i].setMap(null);
+        }
+
+
+    for (n = 0; n < markNums.length; n++) {
+   if (gmarkers[markNums[n]]!=undefined)
+        gmarkers[markNums[n]].setMap(map);
+    }
+    map.setZoom(15);
+}
+
+
+$('.location__controls-item--transport').click(function () {
+    getMarkers(gmarkers,markNums= [ 29, 30, 31, 41]);
+});
+
+$('.location__controls-item--school').click(function () {
+    getMarkers(gmarkers,markNums=[3,4,5]);
+});
+
+$('.location__controls-item--walk').click(function () {
+     getMarkers(gmarkers,markNums=[22,23,24,36,38,40]);
+          map.setZoom(13);
+});
+
+$('.location__controls-item--store').click(function () {
+    getMarkers(gmarkers,markNums=[7,8,9,10 ]);
+    map.setZoom(13);
+});
+$('.location__controls-item--medicine').click(function () {
+    getMarkers(gmarkers,markNums=[12,13,14]);
+});
+$('.location__controls-item--finance').click(function () {
+    getMarkers(gmarkers,markNums=[0,1,2,6 ]);
+});
+//$('.infrastructure__item--kids').click(function () {
+//    getMarkers(gmarkers,markNums=[0,1,2,22]);
+//});
+//$('.infrastructure__item--history').click(function () {
+//    getMarkers(gmarkers,markNums=[16,17,18,22]);
+//});
+//$('.infrastructure__item--stop').click(function () {
+//    getMarkers(gmarkers,markNums=[24,25,22]); //was 23
+//});
+$('.location__controls-item--sport').click(function () {
+    getMarkers(gmarkers,markNums=[19,20,21,34,35]);
+     map.setZoom(13);
+});
+//$('.infrastructure__item--gas').click(function () {
+//    getMarkers(gmarkers,markNums=[29,30,22]);
+//});
+$('.location__controls-item--government').click(function () {
+    getMarkers(gmarkers,markNums=[25, 26, 27 ]);
+});
+//$('.location__controls-item--attraction').click(function () {
+//    getMarkers(gmarkers,markNums=[22,23,24 ,33]);
+//});
+//$('.infrastructure__item--food').click(function () {
+//    getMarkers(gmarkers,markNums=[33,34,41,22]); //34,35,42,22
+//});
+//$('.infrastructure__item--cinema').click(function () {
+//    getMarkers(gmarkers,markNums=[11,12,13,22]);
+//});
+$('.location__controls-item--all').click(function () {
+    getMarkers(gmarkers,markNums=[3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,33]);
+});

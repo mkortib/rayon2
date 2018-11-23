@@ -1,0 +1,45 @@
+.choose-svg-wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left:0px;
+}
+
+.choose-svg-wrapper svg{
+    width: 100%;
+    height: 100%;
+ }
+
+.apartments__filter-wrapper {
+    position: relative;
+}
+.select-apart-block {
+    position: absolute;
+    top: 150px;
+    display: none;
+    padding: 1px;
+    border: 1px solid #bda87b;
+    max-width: 180px
+}
+.choose-row {
+    font-family: "OpenSansBold", sans-serif;
+    padding: 2px 0
+}
+.apart-info {
+    color: #262b37;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 6px 12px;
+}
+
+.back-page-link {
+    bottom: 0;
+}
+path {
+    cursor:pointer;
+    opacity: .7;
+}
+path:hover {
+    opacity: .5;
+}

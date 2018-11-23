@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="windows-1251">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Выбор апартаментов на генплане</title>
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="/css/perfect-scrollbar.min.css">
+	<link rel="stylesheet" href="/css/ion.rangeSlider.css">
+	<link rel="stylesheet" href="/css/ion.rangeSlider.skinSimple.css">
+	<link rel="stylesheet" href="/css/slick.css">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/selectapp.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&subset=cyrillic" rel="stylesheet">
+
+	<script defer src="/jscripts/jquery-3.2.1.min.js"></script>
+	<script defer src="/jscripts/jquery.fancybox.min.js"></script>
+	<script defer src="/jscripts/perfect-scrollbar.jquery.min.js"></script>
+	<script defer src="/jscripts/slick.min.js"></script>
+	<script defer src="/jscripts/perfect-scrollbar.jquery.min.js"></script>
+	<script defer src="/jscripts/ion.rangeSlider.min.js"></script>
+	<script defer src="/jscripts/main.js"></script>
+	<script defer src="/jscripts/second.js"></script>
+
+	<script defer src="/jscripts/jquery.maskedinput.min.js"></script>
+	<script defer src="/jscripts/formCheck.js"></script>
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KNPRTCV');</script>
+<!-- End Google Tag Manager -->
+    
+</head>
+<body>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter45369690 = new Ya.Metrika({
+                    id:45369690,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/45369690" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	<!-- Header start -->
+	<header class="header">
+		<a href="/" class="logo__link"><img src="/pic/design/logo.svg" alt="" class="logo__img"></a>
+		<!-- Menu start -->
+			<ul class="menu menu--closed">
+				<span data-fancybox data-src="#callback" class="callback__button">Оставить заявку</span>
+				<li class="menu__item"><a href="/about" class="menu__link">О проекте</a></li>
+				<li class="menu__item"><a href="/location" class="menu__link">Расположение</a></li>
+				<li class="menu__item"><a href="/genplan" class="menu__link">Генплан</a></li>
+				<li class="menu__item menu__item--special"><a href="/select-apart" class="menu__link">Выбрать апартамент</a></li>
+				<li class="menu__item"><a href="/mortgage" class="menu__link">Условия покупки</a></li>
+				 <li class="menu__item"><a href="/diary" class="menu__link">Ход строительства</a></li>
+				<li class="menu__item"><a href="/news" class="menu__link">Новости</a></li>
+				<li class="menu__item"><a href="/docs" class="menu__link">Документы</a></li>
+				<li class="menu__item"><a href="/contacts" class="menu__link">Контакты</a></li>
+				<!-- <li class="menu__item menu__item--button menu__item--camera"><a href="#" class="menu__link menu__link--button">Камеры</a></li>
+				<li class="menu__item menu__item--button menu__item--tour"><a href="#" class="menu__link menu__link--button">3D-Тур</a></li> -->
+			</ul>
+		<!-- Menu end -->
+	
+		<!-- Callback container start -->
+			<div class="callback__container">
+			  <a href="tel:+74959884422" class="callback__phone nord-roistat-phone495">+7 (495) 988-44-22</a>
+			  <span data-fancybox data-src="#callback" class="callback__button">Оставить заявку</span>
+			</div>
+		<!-- Callback container end -->
+	</header>
+	<!-- Header end -->
+
+	<!-- Main content container start -->
+	
+<main class="main">
+    <div class="floor__container" style="display:none">
+        <div class="floor__image-container">
+
+        </div>
+        <div class="floor__controls-wrapper">
+            <div class="floor__buttons-wrapper etazh">
+                <div class="floor__up-button choose__single-floor--etazh-next up"></div>
+                <div class="floor__separator txt"></div>
+                <div class="floor__down-button choose__single-floor--etazh-prev down"></div>
+            </div>
+            <p class="floor__floor-count"><span class="floor__floor-count-number">4</span> этаж</p>
+            <a href="#" class="back-page-link" onclick="$('.floor__container').hide(); window.history.pushState('select-apart', 'Title', '/select-apart');// записываем в историю браузера">вернуться назад</a>
+        </div>
+        <div class="floor__rose"><img src="/pic/design/rose-purple.png" alt=""></div>
+        <a href="/saleall/" class="floor__parameters">Выбор по параметрам</a>
+
+
+        <div class="one-flat__description-container" style="display: none">
+            <p class="one-flat__description-text">
+                <span class="one-flat__description-title">Условный номер: </span><span id="numkv"></span>
+            </p>
+            <p class="one-flat__description-text">
+                <span class="one-flat__description-title">Площадь: </span><span id="ploshad"></span> м<sup>2</sup>
+            </p>
+            <p class="one-flat__description-text">
+                <span class="one-flat__description-title">Стоимость за м<sup>2</sup>: </span><span id="pricem2"></span> Р
+            </p>
+            <p class="one-flat__description-text one-flat__description-text--last">
+                <span class="one-flat__description-title">Общая стоимость: </span><span id="totalprice"></span> Р
+            </p>
+        </div>
+    </div>
+
+    <div class="apartments">
+        <h1 class="page-title page-title--apartments page-title--white">Выбор строения</h1>
+        <div class="choose-svg-wrapper sel-choose-svg-wrp">
+            <?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1710px" height="1080px" viewBox="0 0 1710 1080">
+<g id="svg1039">
+<g>
+<image x="0" y="0" width="1710" height="1080" xlink:href="http://media.ndv.ru/plans_editor/_images/37406/section/596c7b7c45fd1.jpg"/>
+</g>
+<g id="25337933129">
+<path d="M444,934v-66.25l699.625-12.583l290.375,20.5v40.083l-292,35L444,934z" api-data=""/>
+</g>
+<g id="86461657592">
+<path d="M1405.416,398.333c-33-23-63.541-69-109.874-126.667s-62.521-149.667-102.521-167S941,170,941,170v76  c0,0,190.418-57.333,208.084-59s61.459,2,73.125,18s40.395,82.667,50.062,97.667s69.842,83.735,77.031,94.333  c14.417,21.25,39.933,44.25,61.1,54.667C1418.586,455.695,1459,482,1459,482v-46C1459,436,1438.416,421.333,1405.416,398.333z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;11&quot;,&quot;h_fl&quot;:&quot;0&quot;}"/>
+</g>
+<g id="67849533822">
+<path d="M1459,864.656l-57.25-4.828l-29.375-1.039l-52.438-6.02L1221,844.51v-14.505l-80.25-9.503L991,825v-35  l229.875-7c0,0,35.256,4.941,75.75,14.25s77.328,18.206,96.313,21C1419.081,822.098,1459,828,1459,828v35V864.656z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;2&quot;,&quot;h_fl&quot;:&quot;15&quot;}"/>
+</g>
+<g id="92578183726">
+<path d="M1414.25,772.833c-10.5-2.5-56.708-15.499-56.708-15.499c-41-7.334-88.938-38.333-105.604-43.333  s-8.552-19-71.552-21.334S941,711,941,711v68c0,0,240.125-8.666,278-5.5s37.131,14.441,77.625,23.75s77.328,18.206,96.313,21  C1419.081,822.098,1459,828,1459,828v-43C1459,785,1424.75,775.333,1414.25,772.833z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;3&quot;,&quot;h_fl&quot;:&quot;14&quot;}"/>
+</g>
+<g id="47114816346">
+<path d="M1459,735.875V785c0,0-34.25-9.667-44.75-12.167s-56.708-15.499-56.708-15.499  c-41-7.334-88.938-38.333-105.604-43.333s-8.552-19-71.552-21.334S941,711,941,711v-68c0,0,194.75-24.334,247.084-22.667  s69.792,47.335,111.792,60.001s52.245,32.488,107.562,43.666C1455.688,733.75,1459,735.875,1459,735.875z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;4&quot;,&quot;h_fl&quot;:&quot;16&quot;}"/>
+</g>
+<g id="73375231355">
+<path d="M1410.75,679c-18-5.667-41.875-12.667-62.542-27.667s-47.938-20.333-81.271-52.666s-40.219-46.334-85.886-50  S941,577,941,577v66c0,0,194.75-24.334,247.084-22.667s69.792,47.335,111.792,60.001s52.245,32.488,107.562,43.666  c48.25,9.75,51.563,11.875,51.563,11.875V693C1459,693,1428.75,684.667,1410.75,679z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;5&quot;,&quot;h_fl&quot;:&quot;0&quot;}"/>
+</g>
+<g id="27182815916">
+<path d="M1459,653v40c0,0-30.25-8.333-48.25-14s-41.875-12.667-62.542-27.667s-47.938-20.333-81.271-52.666  s-40.219-46.334-85.886-50S941,577,941,577v-64c0,0,72.084-14.667,134.417-25s79.457-16,117.791-11.667S1247.938,522,1268.604,538  s46.698,42.333,76.364,59s28.433,26.667,69.766,39S1459,653,1459,653z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;6&quot;,&quot;h_fl&quot;:&quot;0&quot;}"/>
+</g>
+<g id="61595926342">
+<path d="M1390.75,579c-23.5-9.5-45.875-35.75-66.125-49.75s-54.188-42.25-75.438-77.5s-36.469-47.5-75.469-49.25  S941,445,941,445v68c0,0,72.084-14.667,134.417-25s79.457-16,117.791-11.667S1247.938,522,1268.604,538s46.698,42.333,76.364,59  s28.433,26.667,69.766,39S1459,653,1459,653v-43C1459,610,1414.25,588.5,1390.75,579z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;7&quot;,&quot;h_fl&quot;:&quot;0&quot;}"/>
+</g>
+<g id="28412267889">
+<path d="M1459,567v43c0,0-44.75-21.5-68.25-31s-45.875-35.75-66.125-49.75s-54.188-42.25-75.438-77.5  s-36.469-47.5-75.469-49.25S941,445,941,445v-66c0,0,190.418-46.333,208.084-48s61.459-1,73.125,15s40.395,60.667,50.062,75.667  S1339.302,491,1349.302,499s28.952,33.137,61.1,44.667C1418.766,546.667,1459,567,1459,567z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;8&quot;,&quot;h_fl&quot;:&quot;13&quot;}"/>
+</g>
+<g id="14562388182">
+<path d="M1404.75,494.333c-23.333-10.667-42.209-32.333-53.875-44s-50.604-57-73.271-80.667s-40.218-95-90.885-109.333  S941,315,941,315v64c0,0,190.418-46.333,208.084-48s61.459-1,73.125,15s40.395,60.667,50.062,75.667S1339.302,491,1349.302,499  s28.952,33.137,61.1,44.667C1418.766,546.667,1459,567,1459,567v-42C1459,525,1428.083,505,1404.75,494.333z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;9&quot;,&quot;h_fl&quot;:&quot;15&quot;}"/>
+</g>
+<g id="28833468634">
+<path d="M1404.75,494.333c-23.333-10.667-42.209-32.333-53.875-44s-50.604-57-73.271-80.667s-40.218-95-90.885-109.333  S941,315,941,315v-69c0,0,190.418-57.333,208.084-59s61.459,2,73.125,18s40.395,82.667,50.062,97.667s69.842,83.735,77.031,94.333  c14.417,21.25,39.933,44.25,61.1,54.667C1418.586,455.695,1459,482,1459,482v43C1459,525,1428.083,505,1404.75,494.333z" api-data="{&quot;h_id&quot;:&quot;2430&quot;,&quot;h_shn&quot;:&quot;\u041d\u041e\u0420\u0414&quot;,&quot;f_se&quot;:&quot;1&quot;,&quot;f_fl&quot;:&quot;10&quot;,&quot;h_fl&quot;:&quot;14&quot;}"/>
+</g>
+</g>
+</svg>
+
+        </div>
+        <div class="apartments__filter-wrapper">
+            <!--<ul class="apartments__filter">-->
+                <!--<li class="apartments__filter-item apartments__filter-item&#45;&#45;active">Строение 1</li>-->
+                <!--<li class="apartments__filter-item">Строение 2</li>-->
+            <!--</ul>-->
+            <p class="apartments__space">Общая площадь 4841 м<sup>2</sup></p>
+            <p class="apartments__flat-count-text">Свободно апартаментов <span class="apartments__flat-count">55</span></p>
+            <a  href="/saleall/" class="apartments__parametrs">Выбор по параметрам</a>
+
+
+
+        </div>
+    </div>
+    <div class="select-apart-block" style="display: none">
+        <div class="apart-info">
+
+            <div class="choose-row c-sect">Секция <span class="f_se">1</span>, этаж <span class="f_fl">7</span></div>
+            <div class="choose-row c-flat">Апартаментов: <span class="h_fl">1</span></div>
+
+
+        </div>
+
+    </div>
+</main>
+
+
+	<!-- Main content container end -->
+
+	<!-- Footer start -->
+		<footer class="footer">
+			<a href="/partners" class="footer__icon"><img src="/pic/design/ndv-footer-icon.svg" alt="НДВ-Недвижимость"></a>
+			<a href="/partners" class="footer__icon"><img src="/pic/design/dom-footer-icon.svg" alt="Доходный Дом"></a>
+			<p class="footer__copyrights">*Представленная информация на сайте не является публичной офертой</p>
+		</footer>
+	<!-- Footer end -->
+
+
+	<!-- Modal window start -->
+		<div id="callback" class="callback-modal__container">
+			<p class="callback-modal__title">Отправить заявку</p>
+			<div  class="callback-modal__form">
+				<input type="text" class="callback-modal__input clientName1" placeholder="Ваше имя *" required>
+				<input type="tel" class="callback-modal__input clientTel1" placeholder="Ваш телефон *" required>
+				<input type="email" class="callback-modal__input clientMail1" placeholder="Ваш email" required>
+				<input type="text" class="callback-modal__input clientInfo1" placeholder="Комментарий">
+				<span class="cfirst">
+				<input id="cfirst" type="checkbox" name="first" checked="" hidden="">
+       			<label for="cfirst">Отправляя форму, принимаю <a href="/flib/pdf/useragreement.php" target="_blank">пользовательское соглашение</a></label>
+				</span>
+				<button class="callback-modal__button button_send1" onClick="checkSubmitForm(1);">Отправить</button>
+			</div>
+			<div class="modal__close-button" onClick="$.fancybox.close(all)"></div>
+		</div>
+	<!-- Modal window end -->
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNPRTCV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- start Roistat -->
+<script>
+    (function(w, d, s, h, id) {
+        w.roistatProjectId = id; w.roistatHost = h;
+        var p = d.location.protocol == "https:" ? "https://" : "http://";
+        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
+        var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+    })(window, document, 'script', 'cloud.roistat.com', '826dcc75db7252bb7b2ef3703f9be677');
+</script>
+<!-- end Roistat -->
+</body>
+</html>
